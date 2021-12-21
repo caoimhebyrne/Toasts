@@ -12,6 +12,12 @@ Toasts is a Fabric library which makes creating and displaying 'toasts' in Minec
 BasicToast.create("Hello World!").show();
 ```
 
+**Adding an icon to a toast**
+
+```
+BasicToast.create("Hello World!", new Identifier("mymod", "textures/toast.png").show();
+```
+
 **Dismissing the toast after a certain amount of time**
 
 ```
