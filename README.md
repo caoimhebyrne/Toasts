@@ -8,39 +8,44 @@ Toasts is a Fabric library which makes creating and displaying 'toasts' in Minec
 
 **Creating and showing a toast**
 
-```
-BasicToast.create("Hello World!").show();
+```java
+new BasicToastBuilder()
+        .title("My toast")
+        .description("Hello World") // Only required option
+        .build()
+        .show();
 ```
 
 **Adding an icon to a toast**
 
-```
-BasicToast.create("Hello World!", new Identifier("mymod", "textures/toast.png").show();
+```java
+new BasicToastBuilder()
+        .title("My toast")
+        .description("Hello World") // Only required option
+        .icon(new Identifier("textures/item/diamond_sword.png"))
+        .build()
+        .show();
 ```
 
 **Dismissing the toast after a certain amount of time**
 
-```
+```java
 // This toast will dismiss after 2000 ms
-BasicToast.create("Hello World!", 2000).show();
+new BasicToastBuilder()
+        .title("My toast")
+        .description("Hello World") // Only required option
+        .displayTime(2000)
+        .build()
+        .show();
 ```
 
 **Executing code when the toast dismisses**
 
-```
-// The lambda function will run after 5000ms (the default dismissal time)
-BasicToast.create("Hello World!", () -> System.out.println("Toast completed!")).show();
-```
-
-### Examples
-
-**Showing a simple toast via a command**
-
-```
-CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) ->
-    dispatcher.register(literal("test").executes(context -> {
-        BasicToast.create("Hello World!").show();
-        return 1;
-    }))
-);
+```java
+new BasicToastBuilder()
+        .title("My toast")
+        .description("Hello World") // Only required option
+        .decayHandler(()->System.out.println("Toast completed!"))
+        .build()
+        .show();
 ```
