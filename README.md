@@ -4,6 +4,8 @@
 
 Toasts is a Fabric library which makes creating and displaying 'toasts' in Minecraft easier.
 
+*The [main branch](https://github.com/cbyrneee/Toasts) is the latest stable version of Toasts, for current development, see the [dev branch](https://github.com/cbyrneee/Toasts/tree/dev).*
+
 ### Adding to your mod
 
 **TODO**
