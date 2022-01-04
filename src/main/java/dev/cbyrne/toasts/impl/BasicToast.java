@@ -46,17 +46,14 @@ public class BasicToast extends ToastBase {
     public Visibility draw(MatrixStack matrices, ToastManager manager, long startTime) {
         super.drawBackground(matrices, manager);
 
-        if (this.icon != null) super.drawTexture(icon, matrices, manager, 7, 7, 18, 18);
+        if (this.icon != null)
+            super.drawTexture(icon, matrices, manager, 7, 7, 18, 18);
 
-        // TODO: Clean this up, it is *messy*
         var textX = this.icon == null ? 7 : 30;
-        var descriptionY = 7;
-        if (this.title != null) {
-            descriptionY += 11;
-            manager.getClient().textRenderer.draw(matrices, title, textX, 7, 0xFFFFFF);
-        }
+        if (this.title != null)
+            super.drawText(matrices, title, textX, 0xFFFFFF);
 
-        manager.getClient().textRenderer.draw(matrices, text, textX, descriptionY, 0xFFFFFF);
+        super.drawText(matrices, text, textX, 0xFFFFFF);
 
         if (startTime >= displayTime) {
             if (!didExecuteDecayHandler && decayHandler != null) {
