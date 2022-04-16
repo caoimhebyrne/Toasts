@@ -4,9 +4,7 @@
     "version": "${version}",
     "name": "Toasts",
     "description": "A library to allow developers to show 'toasts' in the style of achievement notifications",
-    "authors": [
-        "Conor Byrne (cbyrneee)"
-    ],
+    "authors": ["Conor Byrne (cbyrneee)"],
     "contact": {
         "website": "https://cbyrne.dev",
         "repo": "https://github.com/cbyrneee/Toasts"
@@ -14,13 +12,9 @@
     "license": "MIT",
     "icon": "assets/toasts/icon.png",
     "environment": "client",
-    "entrypoints": {
-    },
-    "mixins": [
-        "toasts.mixins.json"
-    ],
+    "entrypoints": {},
     "depends": {
         "fabricloader": ">=0.12.12",
-        "minecraft": "1.18.1"
+        "minecraft": "1.18.x"
     }
 }

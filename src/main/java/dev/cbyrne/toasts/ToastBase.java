@@ -1,7 +1,6 @@
 package dev.cbyrne.toasts;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import dev.cbyrne.toasts.mixin.accessor.MinecraftClientAccessor;
 import dev.cbyrne.toasts.renderer.ToastTextRenderer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
@@ -22,7 +21,7 @@ public abstract class ToastBase implements Toast {
     private final ToastTextRenderer textRenderer = new ToastTextRenderer(7);
 
     public void show() {
-        getToastManager().add(this);
+        MinecraftClient.getInstance().getToastManager().add(this);
     }
 
     protected void drawBackground(MatrixStack matrices, ToastManager manager) {
@@ -43,9 +42,5 @@ public abstract class ToastBase implements Toast {
 
     protected void drawText(MatrixStack matrices, Text text, int x, int color) {
         textRenderer.drawText(matrices, text, x, color);
-    }
-
-    protected ToastManager getToastManager() {
-        return ((MinecraftClientAccessor) MinecraftClient.getInstance()).getToastManager();
     }
 }
