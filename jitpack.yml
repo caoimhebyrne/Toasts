@@ -1,0 +1,9 @@
+jdk:
+    - openjdk17
+before_install:
+    - bash ensure-java-17 install
+install:
+    - if ! bash ensure-java-17 use; then source ~/.sdkman/bin/sdkman-init.sh; fi
+    - java -version
+    - chmod +x ./gradlew
+    - ./gradlew clean publishToMavenLocal
